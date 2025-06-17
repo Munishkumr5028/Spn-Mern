@@ -1,0 +1,1121 @@
+.students-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.students-heading {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  justify-items: center;
+}
+
+.student-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.student-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.student-img-wrapper {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border: 3px solid #27ae60;
+  transition: transform 0.3s ease;
+}
+
+.student-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.student-card:hover .student-img {
+  transform: scale(1.1);
+}
+
+.student-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.student-department {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.student-rank {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #27ae60;
+}
+@media (max-width: 1600px) {
+  .students-grid {
+    grid-template-columns: repeat(5, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 1200px) {
+  .students-grid {
+    grid-template-columns: repeat(4, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .students-grid {
+    grid-template-columns: repeat(3, 1fr); /* 2 columns for small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .students-grid {
+    grid-template-columns: 1fr; /* 1 column for mobile screens */
+  }
+}
+/* Student Login Section Styles */
+.login-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.login-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.login-card {
+  /* background-color: #f8f9fa; */
+  /* padding: 2.5rem; */
+  /* border-radius: 15px; */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #10b981;
+}
+
+/* Responsive Design for Student Login Section */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .login-card h2 {
+    font-size: 2rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .login-button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .forgot-password {
+    font-size: 0.85rem;
+  }
+
+  .login-section {
+    margin-bottom: 450px; /* Adjusted for mobile Footer */
+  }
+}
+/* Timetable Section Styles */
+.timetable-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.timetable-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timetable-card {
+  background-color: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.timetable-card h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+.timetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.semester-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.semester-toggle span {
+  font-size: 1.1rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.toggle-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.course-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.course-selector label {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.course-selector select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-selector select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+}
+
+.timetable-wrapper {
+  overflow-x: auto; /* Enables horizontal scrolling on small screens */
+}
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: #555;
+}
+
+.timetable th,
+.timetable td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #d1d5db;
+}
+
+.timetable th {
+  background-color: #10b981;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.timetable tbody tr {
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timetable tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.timetable tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #e6fffa; /* Light teal on hover */
+}
+
+.timetable td {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* Responsive Design for Timetable Section */
+@media (max-width: 768px) {
+  .timetable-card {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .timetable-card h2 {
+    font-size: 2rem;
+  }
+
+  .timetable-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .semester-toggle span {
+    font-size: 1rem;
+  }
+
+  .toggle-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .course-selector label {
+    font-size: 1rem;
+  }
+
+  .course-selector select {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .timetable th,
+  .timetable td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .timetable {
+    font-size: 0.9rem;
+  }
+
+  .timetable-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
+/* Academic Resources Section Styles */
+.resources-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.resources-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.resources-container h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.resource-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+}
+
+.resource-image {
+  margin-bottom: 1rem;
+}
+
+.resource-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.resource-content {
+  text-align: left;
+}
+
+.resource-content h4 {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin-bottom: 0.8rem;
+}
+
+.resource-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.resource-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #10b981;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.resource-button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Academic Resources Section */
+@media (max-width: 900px) {
+  .resources-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .resources-container h2 {
+    font-size: 2rem;
+  }
+
+  .resource-card {
+    padding: 1.2rem;
+  }
+
+  .resource-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .resource-description {
+    font-size: 0.9rem;
+  }
+
+  .resource-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .resource-image img {
+    height: 120px;
+  }
+
+  .resources-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
+/* Attendance Section Styles */
+.attendance-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.attendance-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.attendance-card {
+  background-color: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.attendance-card h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.department-selector,
+.month-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.department-selector label,
+.month-selector label {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.department-selector select,
+.month-selector select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-selector select:focus,
+.month-selector select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+}
+
+.attendance-wrapper {
+  overflow-x: auto; /* Enables horizontal scrolling on small screens */
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: #555;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #d1d5db;
+}
+
+.attendance-table th {
+  background-color: #10b981;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.attendance-table tbody tr {
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.attendance-table tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #e6fffa; /* Light teal on hover */
+}
+
+.attendance-table td {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* Responsive Design for Attendance Section */
+@media (max-width: 768px) {
+  .attendance-card {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .attendance-card h2 {
+    font-size: 2rem;
+  }
+
+  .attendance-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .department-selector label,
+  .month-selector label {
+    font-size: 1rem;
+  }
+
+  .department-selector select,
+  .month-selector select {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .attendance-table {
+    font-size: 0.9rem;
+  }
+
+  .attendance-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
+
+/* Scholarships Section Styles */
+.scholarships-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.scholarships-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.scholarships-container h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.scholarships-group {
+  margin-bottom: 3rem;
+}
+
+.scholarships-group h3 {
+  font-size: 2rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+.scholarships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.scholarship-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scholarship-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+}
+
+.scholarship-image {
+  margin-bottom: 1rem;
+}
+
+.scholarship-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.scholarship-content {
+  text-align: left;
+}
+
+.scholarship-content h4 {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin-bottom: 0.8rem;
+}
+
+.scholarship-eligibility,
+.scholarship-award,
+.scholarship-deadline {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.scholarship-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.scholarship-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #10b981;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scholarship-button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Scholarships Section */
+@media (max-width: 900px) {
+  .scholarships-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .scholarships-container h2 {
+    font-size: 2rem;
+  }
+
+  .scholarships-group h3 {
+    font-size: 1.8rem;
+  }
+
+  .scholarship-card {
+    padding: 1.2rem;
+  }
+
+  .scholarship-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .scholarship-eligibility,
+  .scholarship-award,
+  .scholarship-deadline,
+  .scholarship-description {
+    font-size: 0.9rem;
+  }
+
+  .scholarship-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .scholarship-image img {
+    height: 120px;
+  }
+
+  .scholarships-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
+/* Internships & Placement Section Styles */
+.internships-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.internships-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.internships-container h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.internships-group {
+  margin-bottom: 3rem;
+}
+
+.internships-group h3 {
+  font-size: 2rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+/* Recruiters Grid */
+.recruiters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.recruiter-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recruiter-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  border-left: 3px solid #10b981;
+}
+
+.recruiter-card h4 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Statistics Card */
+.stats-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-item h4 {
+  font-size: 1.8rem;
+  color: #10b981;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+}
+
+.testimonial-image {
+  margin-bottom: 1rem;
+}
+
+.testimonial-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+  text-align: left;
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.testimonial-content h4 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-company {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* Application Process Card */
+.apply-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: left;
+}
+
+.apply-intro {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.apply-steps {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.apply-steps li {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.apply-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #10b981;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .recruiters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .internships-container h2 {
+    font-size: 2rem;
+  }
+
+  .internships-group h3 {
+    font-size: 1.8rem;
+  }
+
+  .recruiter-card {
+    padding: 0.8rem;
+  }
+
+  .recruiter-card h4 {
+    font-size: 1rem;
+  }
+
+  .stats-card {
+    padding: 1.5rem;
+  }
+
+  .stat-item h4 {
+    font-size: 1.5rem;
+  }
+
+  .stat-item p {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-card {
+    padding: 1.2rem;
+  }
+
+  .testimonial-quote,
+  .testimonial-company {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .apply-card {
+    padding: 1.5rem;
+  }
+
+  .apply-intro,
+  .apply-steps li {
+    font-size: 0.9rem;
+  }
+
+  .apply-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .internships-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}

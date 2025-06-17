@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admission-login {
+  margin: 20px 10px;
+  width: 80%;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.admission-login h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+}
+
+select#countryCode {
+  width: 100%;
+  max-width: 58px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007b5e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #009774e6;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.mobile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-code {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 15px;
+  width: 80px;
+  color: #333;
+  pointer-events: none;
+  appearance: none;
+}

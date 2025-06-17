@@ -1,0 +1,638 @@
+/* .gallery-marquee {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  animation: scrollUp 30s linear infinite;
+  width: 100%;
+}
+
+.gallery-marquee:hover .gallery-grid {
+  animation-play-state: paused;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.hover-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  animation: borderGlow 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    border-color: #ff7675;
+  }
+  50% {
+    border-color: #74b9ff;
+  }
+  100% {
+    border-color: #55efc4;
+  }
+} */
+/* Events & Festivals Section Styles */
+.events-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space for Footer */
+}
+
+.events-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.events-container h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.events-group {
+  margin-bottom: 3rem;
+}
+
+.events-group h3 {
+  font-size: 2rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+}
+
+.event-image {
+  margin-bottom: 1rem;
+}
+
+.event-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.event-content {
+  text-align: left;
+}
+
+.event-type {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.type-cultural {
+  background-color: #e6fffa;
+  color: #10b981;
+}
+
+.type-technical {
+  background-color: #e6f3ff;
+  color: #3b82f6;
+}
+
+.type-sports {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.type-community {
+  background-color: #e6fff5;
+  color: #22c55e;
+}
+
+.event-content h4 {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0.8rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.event-link {
+  font-size: 0.9rem;
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.event-link:hover {
+  color: #059669;
+}
+
+/* Responsive Design for Events & Festivals Section */
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .events-container h2 {
+    font-size: 2rem;
+  }
+
+  .events-group h3 {
+    font-size: 1.8rem;
+  }
+
+  .event-card {
+    padding: 1.2rem;
+  }
+
+  .event-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .event-date,
+  .event-description {
+    font-size: 0.9rem;
+  }
+
+  .event-link {
+    font-size: 0.85rem;
+  }
+
+  .event-image img {
+    height: 120px;
+  }
+
+  .events-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
+/* Sports Gallery Section Styles */
+.gallery-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Dynamic spacing for Footer */
+  overflow-y: auto; /* Ensure section is scrollable */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.gallery-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-container h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Adjusted for smaller screens */
+  gap: 2rem;
+  justify-content: center;
+}
+
+.gallery-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+}
+
+.gallery-image {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-image img {
+  transform: scale(1.05);
+}
+
+.gallery-content {
+  text-align: left;
+}
+
+.sport-type {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.type-cricket {
+  background-color: #e6fffa;
+  color: #10b981;
+}
+
+.type-football {
+  background-color: #e6f3ff;
+  color: #3b82f6;
+}
+
+.type-athletics {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.type-basketball {
+  background-color: #e6fff5;
+  color: #22c55e;
+}
+
+.gallery-caption {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-event {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-date {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* Lightbox Modal Styles */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox-content {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 60vh;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.lightbox-caption {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.lightbox-close {
+  padding: 0.6rem 1.2rem;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Sports Gallery Section */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-card {
+    padding: 1.2rem;
+  }
+
+  .gallery-caption {
+    font-size: 1rem;
+  }
+
+  .gallery-event,
+  .gallery-date {
+    font-size: 0.9rem;
+  }
+
+  .gallery-image img {
+    height: 150px;
+  }
+
+  .lightbox-caption {
+    font-size: 1rem;
+  }
+
+  .lightbox-close {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .gallery-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
+/* Workshops & Seminars Section Styles */
+.events-section {
+  width: 100%;
+  min-height: 70vh;
+  padding: 5% 5%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Dynamic spacing for Footer */
+  overflow-y: auto; /* Ensure section is scrollable */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.events-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.events-container h2 {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.events-group {
+  margin-bottom: 3rem;
+}
+
+.events-group h3 {
+  font-size: 2rem;
+  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for smaller screens */
+  gap: 2rem;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+}
+
+.event-image {
+  margin-bottom: 1rem;
+}
+
+.event-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.event-content {
+  text-align: left;
+}
+
+.event-type {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.type-academic {
+  background-color: #e6fffa;
+  color: #10b981;
+}
+
+.type-industry {
+  background-color: #e6f3ff;
+  color: #3b82f6;
+}
+
+.type-research {
+  background-color: #f3e8ff;
+  color: #8b5cf6;
+}
+
+.type-professional {
+  background-color: #e6fff5;
+  color: #22c55e;
+}
+
+.event-content h4 {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.event-speaker {
+  font-size: 1rem;
+  color: #1f2937;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.event-link {
+  font-size: 0.9rem;
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.event-link:hover {
+  color: #059669;
+}
+
+/* Responsive Design for Workshops & Seminars Section */
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .events-container h2 {
+    font-size: 2rem;
+  }
+
+  .events-group h3 {
+    font-size: 1.8rem;
+  }
+
+  .event-card {
+    padding: 1.2rem;
+  }
+
+  .event-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .event-date,
+  .event-speaker,
+  .event-description {
+    font-size: 0.9rem;
+  }
+
+  .event-link {
+    font-size: 0.85rem;
+  }
+
+  .event-image img {
+    height: 120px;
+  }
+
+  .events-section {
+    margin-bottom: 10px; /* Adjusted for mobile Footer */
+  }
+}
