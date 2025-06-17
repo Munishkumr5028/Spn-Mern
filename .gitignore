@@ -13,5 +13,5 @@ server/node_modules/
 client/.env
 server/.env
 
-# Vite/Build
-_client/dist/
+# Vite/Build Output
+client/dist/
