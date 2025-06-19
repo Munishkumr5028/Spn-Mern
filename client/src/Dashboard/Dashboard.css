@@ -44,10 +44,10 @@
   padding: 0;
   margin: 0;
 }
-ul li{
+ul li {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -254,4 +254,14 @@ a{
   background-color: #111827;
   color: #ffffff;
   padding: 10px 5%;
+}
+/* For modern browsers */
+.sidebar {
+  overflow-y: scroll; /* allows scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

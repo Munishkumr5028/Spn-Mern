@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { FaCog, FaSearch, FaBell, FaUserCircle } from 'react-icons/fa';
-import './Dashboard.css';
+import React, { useState } from "react";
+import { FaCog, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./Dashboard.css";
 
 function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -14,19 +15,41 @@ function Navbar() {
       <div className="navbar-left">
         <div className="logo">SPN_Panel</div>
         <ul className="nav-links">
-          <li>Home</li>
+          <li><Link to="/dashboard" className="nav-link">
+             Home
+            </Link></li>
           <li>Teachers</li>
-          <li>Students</li>
-          <li>Events</li>
+          <li>
+            <Link to="/enquirymessage" className="nav-link">
+              Contact Inquire
+            </Link>
+          </li>
+          <li>
+            <Link to="/admissionmessages" className="nav-link">
+              Admission Inquire
+            </Link>
+          </li>
         </ul>
       </div>
 
       <div className="navbar-right">
-        <FaSearch className="nav-icon" />
-        <FaBell className="nav-icon" />
-        <FaCog className="nav-icon" />
+        <div className="icon-wrapper">
+          <FaSearch className="nav-icon" />
+          <span className="hover-line"></span>
+        </div>
+        <div className="icon-wrapper">
+          <FaBell className="nav-icon" />
+          <span className="hover-line"></span>
+        </div>
+        <div className="icon-wrapper">
+          <FaCog className="nav-icon" />
+          <span className="hover-line"></span>
+        </div>
         <div className="user-dropdown" onClick={toggleDropdown}>
-          <FaUserCircle className="nav-icon user-icon" />
+          <div className="icon-wrapper">
+            <FaUserCircle className="nav-icon user-icon" />
+            <span className="hover-line"></span>
+          </div>
           {dropdownOpen && (
             <div className="dropdown-menu">
               <p className="dropdown-item">Logout</p>

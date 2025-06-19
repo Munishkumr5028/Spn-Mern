@@ -1,0 +1,106 @@
+.admission-box {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.admission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admission-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.admission-table-container {
+  overflow-x: auto;
+}
+
+.admission-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.admission-table th,
+.admission-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.admission-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.btn-icon:hover {
+  color: #007bff;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.view-field {
+  margin-bottom: 15px;
+}
+
+.view-field label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.view-field p {
+  margin: 0;
+  color: #333;
+}
+
+.modal-buttons {
+  text-align: right;
+}
+
+.btn-cancel {
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #777;
+}
