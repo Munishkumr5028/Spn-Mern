@@ -99,6 +99,7 @@
   }
 }
 /* Student Login Section Styles */
+/* Base Styles */
 .login-section {
   width: 100%;
   min-height: 70vh;
@@ -107,22 +108,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px; /* Space for Footer */
+  margin-bottom: 10px;
 }
 
 .login-container {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
+
 .login-card {
-  /* background-color: #f8f9fa; */
-  /* padding: 2.5rem; */
-  /* border-radius: 15px; */
-  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
   width: 100%;
   max-width: 400px;
+  background-color: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -187,17 +191,56 @@
   color: #4b5563;
   text-decoration: none;
   transition: color 0.3s ease;
+  text-align: right;
 }
 
 .forgot-password:hover {
   color: #10b981;
 }
 
-/* Responsive Design for Student Login Section */
-@media (max-width: 768px) {
+/* Tablet (≤ 992px) */
+@media (max-width: 992px) {
+  .login-section {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
+
   .login-card {
     padding: 2rem;
     max-width: 90%;
+  }
+
+  .login-card h2 {
+    font-size: 2.2rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .form-group input {
+    font-size: 0.95rem;
+  }
+
+  .login-button {
+    font-size: 0.95rem;
+  }
+
+  .forgot-password {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile (≤ 576px) */
+@media (max-width: 576px) {
+  .login-section {
+    padding: 30px 15px;
+    margin-bottom: 60px;
+  }
+
+  .login-card {
+    padding: 1.8rem;
+    max-width: 100%;
   }
 
   .login-card h2 {
@@ -209,23 +252,21 @@
   }
 
   .form-group input {
-    padding: 0.7rem;
     font-size: 0.9rem;
+    padding: 0.7rem;
   }
 
   .login-button {
-    padding: 0.7rem;
     font-size: 0.9rem;
+    padding: 0.7rem;
   }
 
   .forgot-password {
-    font-size: 0.85rem;
-  }
-
-  .login-section {
-    margin-bottom: 450px; /* Adjusted for mobile Footer */
+    font-size: 0.8rem;
+    text-align: center;
   }
 }
+
 /* Timetable Section Styles */
 .timetable-section {
   width: 100%;

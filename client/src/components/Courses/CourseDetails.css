@@ -1,47 +1,69 @@
-.course-info-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 10px;
-  margin-bottom: 30px;
+/* CourseDetails.css */
+.course-details-wrapper {
+  margin: 2px;
+}
+.course-details-wrapper {
+  padding: 20px 16px;
+  max-width: 1270px;
+  margin: 0 auto;
 }
 
-/* Left Side */
+.course-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 .left-course-info {
-  padding-left: 30px;
-  width: 70%;
+  flex: 1 1 60%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.right-course-info {
+  flex: 1 1 35%;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .left-course-info h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: #000;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.left-course-info h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+.left-course-info h2,
+.right-course-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
   color: #1a1919;
-  border-bottom: 1px solid rgb(199, 199, 199);
-  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
 }
 
 .left-course-info h3 {
   font-size: 1.2rem;
   margin-bottom: 8px;
-  color: #252525;
+  color: #333;
 }
 
-.left-course-info p {
+.left-course-info p,
+.fees-box p {
   color: #555;
   line-height: 1.6;
   margin-bottom: 16px;
+  font-size: 1rem;
 }
 
 .left-course-info ul {
-  list-style-type: disc; 
-  padding-left: 20px; 
+  list-style: disc inside;
   margin-bottom: 16px;
+  padding-left: 0;
 }
 
 .left-course-info li {
@@ -54,41 +76,10 @@
   margin-bottom: 30px;
 }
 
-/* Apply Button */
-.apply-btn {
-  background-color: #007b5e;
-  color: white;
-  padding: 12px 70px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-  margin-top: 20px;
-}
-
-.apply-btn:hover {
-  background-color: #009774e6;
-}
-
-/* Right Side */
-.right-course-info {
-  padding: 74px 30px 30px 30px;
-  width: 40%;
-}
-
-.right-course-info h2 {
-  font-size: 1.4rem;
-  color: #333;
-  border-bottom: 1px solid grey;
-  padding-bottom: 15px;
-}
-
 .fees-box {
-  background: #a8a8a821;
-  padding: 4px 19px;
+  background: #e9f1f8;
+  padding: 12px 20px;
   margin-top: 20px;
-  margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
@@ -96,7 +87,7 @@
 .fees-box h3 {
   color: #000;
   margin: 0;
-  padding: 0;
+  font-size: 1rem;
 }
 
 .fees-box p {
@@ -107,7 +98,73 @@
 
 .fees-flex {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
   flex-wrap: wrap;
+}
+
+.apply-btn-wrapper {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.apply-btn {
+  background-color: #007b5e;
+  color: white;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background-color: #009774e6;
+}
+
+@media (max-width: 768px) {
+  .course-details-wrapper {
+    margin: 0px 10px;
+  }
+  .course-info-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .left-course-info,
+  .right-course-info {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .left-course-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .left-course-info h2,
+  .right-course-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .left-course-info h3 {
+    font-size: 1rem;
+  }
+
+  .left-course-info p,
+  .fees-box p {
+    font-size: 0.95rem;
+  }
+
+  .apply-btn-wrapper {
+    padding: 0 12px;
+    margin-top: 22px;
+    margin-bottom: 2px;
+  }
+
+  .apply-btn {
+    width: 100%;
+    border-radius: 12px;
+    padding: 14px;
+  }
 }

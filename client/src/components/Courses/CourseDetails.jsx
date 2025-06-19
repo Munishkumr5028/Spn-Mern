@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom"; // Import useParams
+import { Link, useParams } from "react-router-dom";
 import "./CourseDetails.css";
 
 const courseData = [
@@ -640,19 +640,15 @@ const courseData = [
 ];
 
 function CourseDetails() {
-  const { id } = useParams(); // Get the 'id' from URL parameters
-
-  // Find the course with the matching id
+  const { id } = useParams();
   const course = courseData.find((course) => course.id === parseInt(id));
 
-  if (!course) {
-    return <p>Course not found</p>;
-  }
+  if (!course) return <p>Course not found</p>;
 
   return (
-    <div>
+    <div className="course-details-wrapper">
       <div className="course-info-container">
-        {/* Left Side */}
+        {/* Left Side: Course Details */}
         <div className="left-course-info">
           <h1>{course.title}</h1>
           <section>
@@ -664,8 +660,8 @@ function CourseDetails() {
             <div className="section-block">
               <h3>Objectives</h3>
               <ul>
-                {course.objectives.map((objective, idx) => (
-                  <li key={idx}>{objective}</li>
+                {course.objectives.map((obj, i) => (
+                  <li key={i}>{obj}</li>
                 ))}
               </ul>
             </div>
@@ -676,12 +672,10 @@ function CourseDetails() {
                 Max. Duration: {course.duration.max}
               </p>
             </div>
-            <Link to="/admission">
-              <button className="apply-btn">Apply Now</button>
-            </Link>
           </section>
         </div>
-        {/* Right Side */}
+
+        {/* Right Side: Fees Info */}
         <div className="right-course-info">
           <h2>Fees Structure</h2>
           {course.fees.map((fee, idx) => (
@@ -693,6 +687,13 @@ function CourseDetails() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Apply Button */}
+      <div className="apply-btn-wrapper">
+        <Link to="/admission">
+          <button className="apply-btn">Apply Now</button>
+        </Link>
       </div>
     </div>
   );
