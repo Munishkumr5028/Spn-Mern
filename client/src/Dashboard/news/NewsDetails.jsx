@@ -3,20 +3,16 @@ import DashboardLayout from "../DashboardLayout";
 import "./NewsDetails.css";
 
 function NewsDetails() {
-   const NewsdetailsData = [
+  const NewsdetailsData = [
     {
-     heading: "dewali",
-      date: "01-06-2025",
-      Description : "this is a sample",
-      image: null,
-    },
-    {
-      heading: "dewali",
-      date: "02-06-2025",
-      Description : "this is a sample",
+      id: 1,
+      heading: "Diwali Celebration",
+      date: "2025-06-01",
+      description: "This is a sample description for Diwali event. Limited to a few words only.",
       image: null,
     },
   ];
+
   const [newsList, setNewsList] = useState(NewsdetailsData);
   const [showModal, setShowModal] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
@@ -37,8 +33,22 @@ function NewsDetails() {
   };
 
   const addOrUpdateNews = () => {
+    if (!formData.image) {
+      alert("Image is required.");
+      return;
+    }
+    if (!formData.date) {
+      alert("date is required.");
+      return;
+    }
+
+    if (!formData.description || formData.description.trim().split(/\s+/).length < 5) {
+      alert("Description must be at least 25 words.");
+      return;
+    }
+
     const newEntry = {
-      id: editingIndex !== null ? newsList[editingIndex].id : newsList.length + 1,
+      id: editingIndex !== null ? newsList[editingIndex].id : Date.now(),
       image: formData.image,
       date: formData.date,
       heading: formData.heading,
@@ -108,19 +118,19 @@ function NewsDetails() {
                 </td>
               </tr>
             ) : (
-            newsList.map((news, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{news.heading}</td>
-                <td>{news.date}</td>
-                <td>
-                  <div className="action-buttons">
-                    <button className="edit-btn" onClick={() => editNews(index)}>Edit</button>
-                    <button className="delete-btn" onClick={() => deleteNews(index)}>Delete</button>
-                  </div>
-                </td>
-              </tr>
-            ))
+              newsList.map((news, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{news.heading}</td>
+                  <td>{news.date}</td>
+                  <td>
+                    <div className="action-buttons">
+                      <button className="edit-btn" onClick={() => editNews(index)}>Edit</button>
+                      <button className="delete-btn" onClick={() => deleteNews(index)}>Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              ))
             )}
           </tbody>
         </table>
@@ -131,23 +141,42 @@ function NewsDetails() {
               <h3>{editingIndex !== null ? "Edit News" : "Add News"}</h3>
               <label>
                 Image:
-                <input type="file" name="image" accept="image/*" required value={formData.topic} onChange={handleInputChange} />
+                <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleInputChange}
+                />
               </label>
               <label>
                 Date:
-                <input type="date" name="date" value={formData.date} onChange={handleInputChange} />
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleInputChange}
+                />
               </label>
               <label>
-                Heading (0-15 words):
-                <input type="text" name="heading" required value={formData.heading}onChange={handleInputChange} />
+                Heading (max 15 words):
+                <input
+                  type="text"
+                  name="heading"
+                  value={formData.heading}
+                  onChange={handleInputChange}
+                />
               </label>
               <label>
-                Description (20–25 words):
-                <textarea name="description" value={formData.description} onChange={handleInputChange}></textarea>
+                Description:
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                ></textarea>
               </label>
               <div className="modal-actions">
-                <button onClick={addOrUpdateNews}>{editingIndex !== null ? "Update" : "Save"}</button>
                 <button className="delete-btn" onClick={() => setShowModal(false)}>Cancel</button>
+                <button className="save-btn" onClick={addOrUpdateNews}>Save</button>
               </div>
             </div>
           </div>

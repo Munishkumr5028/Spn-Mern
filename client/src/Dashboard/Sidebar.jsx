@@ -101,7 +101,10 @@ function Sidebar() {
               <Link to="/aluminisuccess">
               Alumini Success</Link>
             </li>
-            <li>Alumini Events</li>
+            <li>
+              <Link to="/aluminievents">
+              Alumini Events </Link>
+              </li>
             <li>Alumini Register</li>
             <li>Alumini Donation</li>
           </ul>

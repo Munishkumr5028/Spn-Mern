@@ -45,6 +45,7 @@ import NewsDetails from "./Dashboard/news/NewsDetails";
 import AddAlumini from "./Dashboard/alumni/AddAlumni";
 import AluminiSuccess from "./Dashboard/alumni/AlumniSuccess";
 import ScrollToTop from "./components/ScrollToTop";
+import AluminiEvents  from "./Dashboard/alumni/AluminiEvents";
 
 function App() {
   return (
@@ -95,7 +96,8 @@ function App() {
         <Route path="/newsdetails" element={<NewsDetails />} />
         <Route path="/addalumini" element={<AddAlumini />} />
         <Route path="/aluminisuccess" element={<AluminiSuccess />} />
-      </Routes>
+        <Route path="/aluminievents" element={<AluminiEvents />} />
+        </Routes>
     </BrowserRouter>
   );
 }
