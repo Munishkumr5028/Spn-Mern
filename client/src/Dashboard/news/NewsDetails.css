@@ -5,7 +5,7 @@
   margin: 0 auto;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 }
 
 /* Header */
@@ -81,11 +81,11 @@
 }
 
 .edit-btn {
-  background-color: #007bff;
+  background-color: #28a745;
 }
 
 .edit-btn:hover {
-  background-color: #0056b3;
+  background-color: #218838;
 }
 
 .delete-btn {
@@ -171,12 +171,12 @@
   cursor: pointer;
 }
 
-.modal-actions button:first-child {
+.modal-actions .save-btn {
   background-color: #28a745;
   color: white;
 }
 
-.modal-actions button:first-child:hover {
+.modal-actions .save-btn:hover {
   background-color: #218838;
 }
 

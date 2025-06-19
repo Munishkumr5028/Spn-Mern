@@ -35,12 +35,12 @@
 .alumini-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+   margin-top: 1rem;
 }
 
 .alumini-table th,
 .alumini-table td {
-  border: 1px solid #ddd;
+   border: 1px solid #ddd;
   padding: 0.75rem;
   text-align: center;
   font-size: 1rem;
@@ -85,76 +85,45 @@
   background-color: #c82333;
 }
 
-/* Modal Styles */
-.modal-backdrop {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
+  z-index: 1000;
 }
 
-.modal-box {
-  background-color: white;
-  padding: 2rem;
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
   border-radius: 10px;
-  /* flex-direction: column;
-  display: flex; */
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.modal-box h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #007bff;
-}
-
-.modal-box input[type="text"],
-.modal-box textarea,
-.modal-box input[type="file"] {
+.modal input,
+.modal textarea {
   width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 4px;
 }
 
-.modal-buttons {
+.modal-actions {
   display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
+  justify-content: space-between;
 }
 
 .btn-cancel {
-  padding: 0.6rem 1rem;
   background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn-cancel:hover {
-  background-color: #c82333;
 }
 
 .btn-save {
-  padding: 0.6rem 1.2rem;
-  background-color: #218838;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn-save:hover {
-  background-color: #279b40;
+  background-color: #28a745;
 }

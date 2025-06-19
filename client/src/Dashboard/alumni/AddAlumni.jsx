@@ -87,11 +87,11 @@ const AddAlumini = () => {
 
   return (
     <DashboardLayout>
-      <div className="course-box">
-        <div className="course-header">
-          <h2 className="course-title">Add Alumni</h2>
+      <div className="alumini-box">
+        <div className="alumini-header">
+          <h2 className="alumini-title">Add Alumni</h2>
           <button
-            className="course-add-btn"
+            className="alumini-add-btn"
             onClick={() => {
               setModalOpen(true);
               setIsEditing(false);
@@ -102,7 +102,7 @@ const AddAlumini = () => {
           </button>
         </div>
 
-        <table className="course-table">
+        <table className="alumini-table">
           <thead>
             <tr>
               <th>Sr.No.</th>
