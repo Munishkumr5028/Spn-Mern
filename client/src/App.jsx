@@ -44,10 +44,12 @@ import AddNews from "./Dashboard/news/AddNews";
 import NewsDetails from "./Dashboard/news/NewsDetails";
 import AddAlumini from "./Dashboard/alumni/AddAlumni";
 import AluminiSuccess from "./Dashboard/alumni/AlumniSuccess";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+     <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
