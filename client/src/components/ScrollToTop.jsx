@@ -20,6 +20,9 @@ const ScrollToTop = () => {
 
       if (time < 1) {
         requestAnimationFrame(scroll);
+      } else {
+        // 🔥 Notify other components scroll is complete
+        window.dispatchEvent(new Event("scroll-restored-top"));
       }
     };
 

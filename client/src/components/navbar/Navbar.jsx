@@ -43,6 +43,22 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollTop, hideMiniNavbar]);
 
+  // ✅ NEW: Handle scroll restore after route change
+  useEffect(() => {
+    const handleScrollRestore = () => {
+      if (!hideMiniNavbar) {
+        const scrollTop = window.scrollY;
+        setShowMini(scrollTop < 100);
+        setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+      }
+    };
+
+    window.addEventListener("scroll-restored-top", handleScrollRestore);
+    return () => {
+      window.removeEventListener("scroll-restored-top", handleScrollRestore);
+    };
+  }, [hideMiniNavbar]);
+
   // Disable body scrolling when mobile menu is open
   useEffect(() => {
     if (showMenu) {
