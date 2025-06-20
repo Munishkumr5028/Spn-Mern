@@ -1,0 +1,125 @@
+.register-box {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%; /* Matches AluminiDonation */
+  box-sizing: border-box;
+}
+
+.register-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.register-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.register-table th,
+.register-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+}
+
+.register-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.button-action {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.icon-view {
+  font-size: 1.2rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.icon-view:hover {
+  color: #0056b3;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.modal-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.register-details p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.register-details strong {
+  color: #333;
+}
+
+.register-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-details a:hover {
+  text-decoration: underline;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn-close {
+  padding: 0.6rem 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background-color: #c82333;
+}

@@ -1,32 +1,29 @@
 import React, { useState } from "react";
-import "./AcademicCalendar.css";
+import "./Teacher.css";
 import DashboardLayout from "../DashboardLayout";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-function AcademicCalendar() {
+function Teacher() {
   const initialData = [
     {
       id: 1,
-      date: "07/15/2025",
-      time: "09:00",
-      message: "Semester 1 Begins",
+      name: "Dr. Anita Sharma",
+      department: "Computer Science",
     },
     {
       id: 2,
-      date: "08/01/2025",
-      time: "10:00",
-      message: "Orientation Day",
+      name: "Prof. Rajesh Kumar",
+      department: "Mathematics",
     },
   ];
 
-  const [events, setEvents] = useState(initialData);
+  const [teachers, setTeachers] = useState(initialData);
   const [modalOpen, setModalOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
   const [formData, setFormData] = useState({
-    date: "",
-    time: "",
-    message: "",
+    name: "",
+    department: "",
   });
 
   const handleInput = (e) => {
@@ -36,13 +33,13 @@ function AcademicCalendar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.date || !formData.time || !formData.message) {
+    if (!formData.name || !formData.department) {
       alert("All fields are required.");
       return;
     }
 
     if (isEditing) {
-      setEvents((prev) =>
+      setTeachers((prev) =>
         prev.map((item) =>
           item.id === editId ? { ...item, ...formData } : item
         )
@@ -50,18 +47,17 @@ function AcademicCalendar() {
       setIsEditing(false);
       setEditId(null);
     } else {
-      setEvents((prev) => [...prev, { id: prev.length + 1, ...formData }]);
+      setTeachers((prev) => [...prev, { id: prev.length + 1, ...formData }]);
     }
 
     setModalOpen(false);
-    setFormData({ date: "", time: "", message: "" });
+    setFormData({ name: "", department: "" });
   };
 
   const handleEdit = (item) => {
     setFormData({
-      date: item.date,
-      time: item.time,
-      message: item.message,
+      name: item.name,
+      department: item.department,
     });
     setEditId(item.id);
     setIsEditing(true);
@@ -69,66 +65,64 @@ function AcademicCalendar() {
   };
 
   const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this event?")) {
-      setEvents((prev) => prev.filter((item) => item.id !== id));
+    if (window.confirm("Are you sure you want to delete this teacher?")) {
+      setTeachers((prev) => prev.filter((item) => item.id !== id));
     }
   };
 
   return (
     <DashboardLayout>
-      <div className="calendar-box">
-        <div className="calendar-header">
-          <h2 className="calendar-title">Academic Calendar</h2>
+      <div className="teacher-box">
+        <div className="teacher-header">
+          <h2 className="teacher-title">Teacher List</h2>
           <button
-            className="calendar-add-btn"
+            className="teacher-add-btn"
             onClick={() => {
               setModalOpen(true);
               setIsEditing(false);
-              setFormData({ date: "", time: "", message: "" });
+              setFormData({ name: "", department: "" });
             }}
           >
-            Add Event
+            Add Teacher
           </button>
         </div>
 
-        <table className="calendar-table">
+        <table className="teacher-table">
           <thead>
             <tr>
               <th>Sr.No.</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Message</th>
+              <th>Name</th>
+              <th>Department</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {events.length === 0 ? (
+            {teachers.length === 0 ? (
               <tr>
                 <td
-                  colSpan="5"
+                  colSpan="4"
                   style={{ textAlign: "center", color: "#9ca3af" }}
                 >
-                  No Events found
+                  No Teachers found
                 </td>
               </tr>
             ) : (
-              events.map((item, index) => (
+              teachers.map((item, index) => (
                 <tr key={item.id}>
                   <td>{index + 1}</td>
-                  <td>{item.date}</td>
-                  <td>{item.time}</td>
-                  <td>{item.message}</td>
+                  <td>{item.name}</td>
+                  <td>{item.department}</td>
                   <td>
                     <div className="button-action">
                       <FaEdit
                         className="icon-edit"
                         onClick={() => handleEdit(item)}
-                        title="Edit Event"
+                        title="Edit Teacher"
                       />
                       <FaTrash
                         className="icon-delete"
                         onClick={() => handleDelete(item.id)}
-                        title="Delete Event"
+                        title="Delete Teacher"
                       />
                     </div>
                   </td>
@@ -137,33 +131,26 @@ function AcademicCalendar() {
             )}
           </tbody>
         </table>
+
         {modalOpen && (
           <div className="modal-backdrop">
             <div className="modal-box">
-              <h3>{isEditing ? "Edit Event" : "Add New Event"}</h3>
+              <h3>{isEditing ? "Edit Teacher" : "Add New Teacher"}</h3>
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"
-                  name="date"
+                  name="name"
                   required
-                  placeholder="Date (MM/DD/YYYY)"
-                  value={formData.date}
+                  placeholder="Teacher Name (e.g., Dr. Anita Sharma)"
+                  value={formData.name}
                   onChange={handleInput}
                 />
                 <input
                   type="text"
-                  name="time"
+                  name="department"
                   required
-                  placeholder="Time (HH:MM)"
-                  value={formData.time}
-                  onChange={handleInput}
-                />
-                <input
-                  type="text"
-                  name="message"
-                  required
-                  placeholder="Event Message"
-                  value={formData.message}
+                  placeholder="Department (e.g., Computer Science)"
+                  value={formData.department}
                   onChange={handleInput}
                 />
                 <div className="modal-buttons">
@@ -173,7 +160,7 @@ function AcademicCalendar() {
                     onClick={() => {
                       setModalOpen(false);
                       setIsEditing(false);
-                      setFormData({ date: "", time: "", message: "" });
+                      setFormData({ name: "", department: "" });
                     }}
                   >
                     Cancel
@@ -191,4 +178,4 @@ function AcademicCalendar() {
   );
 }
 
-export default AcademicCalendar;
+export default Teacher;

@@ -15,10 +15,16 @@ function Navbar() {
       <div className="navbar-left">
         <div className="logo">SPN_Panel</div>
         <ul className="nav-links">
-          <li><Link to="/dashboard" className="nav-link">
-             Home
-            </Link></li>
-          <li>Teachers</li>
+          <li>
+            <Link to="/dashboard" className="nav-link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/teacher" className="nav-link">
+              Teachers
+            </Link>
+          </li>
           <li>
             <Link to="/enquirymessage" className="nav-link">
               Contact Inquire

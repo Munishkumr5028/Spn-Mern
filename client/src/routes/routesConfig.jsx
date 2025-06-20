@@ -69,4 +69,5 @@ export const publicRoutes = [
   { path: "/alumni/stories", element: <SuccessStories /> },
   { path: "/contact", element: <Contact /> },
   { path: "/admission", element: <Admission /> },
+  { path: "/admission", element: <Admission /> },
 ];

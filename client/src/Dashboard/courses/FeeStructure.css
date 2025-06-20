@@ -1,0 +1,263 @@
+.fee-box {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.fee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.fee-title {
+  font-size: 32px;
+  color: #007bff;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.fee-add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fee-add-btn:hover {
+  background-color: #218838;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.fee-table th,
+.fee-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #111;
+}
+
+.fee-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.button-action {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.icon-edit {
+  font-size: 14px;
+  color: #28a745;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon-edit:hover {
+  color: #218838;
+}
+
+.icon-delete {
+  font-size: 14px;
+  color: #dc3545;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon-delete:hover {
+  color: #c82333;
+}
+
+.fee-cards {
+  margin-top: 20px;
+}
+
+.cards-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.fee-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.fee-card:hover {
+  transform: translateY(-5px);
+}
+
+.fee-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #111;
+  font-weight: bold;
+}
+
+.fee-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.fee-card p strong {
+  color: #111;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.modal-box h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .fee-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .fee-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fee-add-btn {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .fee-table th,
+  .fee-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .icon-edit,
+  .icon-delete {
+    font-size: 13px;
+  }
+
+  .modal-box {
+    max-width: 95%;
+  }
+
+  .fee-card {
+    padding: 10px;
+  }
+
+  .fee-card h4 {
+    font-size: 14px;
+  }
+
+  .fee-card p {
+    font-size: 13px;
+  }
+}
