@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import './AdmissionMessages.css';
 import { FaEye } from 'react-icons/fa';
 import DashboardLayout from '../DashboardLayout';
+import { exportToExcel } from '../../utils/exportToExcel'; 
 
 function AdmissionMessages() {
   const [admissions] = useState([
     { id: 1, name: 'Ravi Kumar', email: 'ravi@example.com', phone: '9876543210', course: 'BCA' },
     { id: 2, name: 'Anita Sharma', email: 'anita@example.com', phone: '9123456780', course: 'MBA' },
   ]);
+
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
 
@@ -21,12 +23,18 @@ function AdmissionMessages() {
     setCurrentStudent(null);
   };
 
+  const handleExport = () => {
+    exportToExcel(admissions, "admission_data.xlsx", "Admissions");
+  };
+
   return (
     <DashboardLayout>
       <div className="admission-box">
         <div className="admission-header">
           <h1 className="admission-title">Admission Messages</h1>
+          <button className="btn-export" onClick={handleExport}>Export as Excel</button>
         </div>
+
         <div className="admission-table-container">
           <table className="admission-table">
             <thead>

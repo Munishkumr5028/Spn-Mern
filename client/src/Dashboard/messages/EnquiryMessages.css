@@ -104,3 +104,17 @@
 .btn-cancel:hover {
   background-color: #777;
 }
+.btn-export {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-left: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-export:hover {
+  background-color: #45a049;
+}

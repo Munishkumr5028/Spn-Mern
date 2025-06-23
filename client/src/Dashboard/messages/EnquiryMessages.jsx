@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import './EnquiryMessages.css';
 import { FaEye } from 'react-icons/fa';
 import DashboardLayout from '../DashboardLayout';
+import { exportToExcel } from '../../utils/exportToExcel';
 
 function EnquiryMessages() {
   const [enquiries] = useState([
     { id: 1, name: 'John Doe', email: 'john@example.com', phone: '123-456-7890', type: 'General', message: 'Interested in services' },
     { id: 2, name: 'Jane Smith', email: 'jane@example.com', phone: '987-654-3210', type: 'Support', message: 'Need help with product' },
   ]);
+
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [currentEnquiry, setCurrentEnquiry] = useState(null);
 
@@ -21,12 +23,18 @@ function EnquiryMessages() {
     setCurrentEnquiry(null);
   };
 
+  const handleExport = () => {
+    exportToExcel(enquiries, "enquiries.xlsx");
+  };
+
   return (
     <DashboardLayout>
       <div className="enquiry-box">
         <div className="enquiry-header">
           <h1 className="enquiry-title">Enquiry Messages</h1>
+          <button className="btn-export" onClick={handleExport}>Export as Excel</button> {/* ✅ Export Button */}
         </div>
+
         <div className="enquiry-table-container">
           <table className="enquiry-table">
             <thead>
