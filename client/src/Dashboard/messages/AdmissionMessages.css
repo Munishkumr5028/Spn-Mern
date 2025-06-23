@@ -1,13 +1,18 @@
 .admission-box {
   padding: 20px;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .admission-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 10px;
 }
 
 .admission-title {
@@ -16,13 +21,52 @@
   color: #333;
 }
 
-.admission-table-container {
-  overflow-x: auto;
+.btn-export {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.btn-export:hover {
+  background-color: #0056b3;
+}
+
+/* Scroll only table rows */
+.admission-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 6px;
+  scrollbar-color: #b3b3b3 #f1f1f1; /* Firefox */
+}
+
+/* WebKit scrollbar styling */
+.admission-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admission-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.admission-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border-radius: 4px;
+}
+
+.admission-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
 }
 
 .admission-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 800px;
   background-color: white;
 }
 
@@ -34,7 +78,10 @@
 }
 
 .admission-table th {
+  position: sticky;
+  top: 0;
   background-color: #f0f0f0;
+  z-index: 1;
   font-weight: bold;
 }
 
@@ -51,6 +98,7 @@
   color: #007bff;
 }
 
+/* Modal Styling */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -104,17 +152,29 @@
 .btn-cancel:hover {
   background-color: #777;
 }
-.btn-export {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  margin-left: auto;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
 
-.btn-export:hover {
-  background-color: #0056b3;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admission-title {
+    font-size: 20px;
+  }
+
+  .btn-export {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .admission-table {
+    min-width: 100%;
+  }
+
+  .admission-table th,
+  .admission-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .modal-box {
+    padding: 20px;
+  }
 }

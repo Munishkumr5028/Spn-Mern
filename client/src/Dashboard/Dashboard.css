@@ -9,6 +9,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* Navbar */
@@ -138,7 +139,8 @@ a {
 .dashboard-content {
   padding: 30px;
   background-color: #f8f9fa;
-  height: 100%;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .dashboard-content h1 {
@@ -192,6 +194,12 @@ a {
   padding: 20px;
   height: 100vh;
   overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .sidebar h2 {
@@ -254,14 +262,4 @@ a {
   background-color: #111827;
   color: #ffffff;
   padding: 10px 5%;
-}
-/* For modern browsers */
-.sidebar {
-  overflow-y: scroll; /* allows scrolling */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-.sidebar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
 }
