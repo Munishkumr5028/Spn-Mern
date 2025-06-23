@@ -1,0 +1,239 @@
+.internship-placement-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Section */
+.internship-placement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.internship-placement-title {
+  font-size: 32px;
+  color: #007bff;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.internship-placement-add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.internship-placement-add-button:hover {
+  background-color: #218838;
+}
+
+/* Table */
+.internship-placement-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  overflow-x: auto;
+}
+
+.internship-placement-table th,
+.internship-placement-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #111;
+}
+
+.internship-placement-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.internship-placement-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.internship-placement-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.internship-placement-edit-btn {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  min-width: 70px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.internship-placement-edit-btn:hover {
+  background-color: #218838;
+}
+
+.internship-placement-delete-btn {
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  min-width: 70px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.internship-placement-delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Modal backdrop */
+.internship-placement-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+/* Modal box */
+.internship-placement-modal-content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.internship-placement-modal-content h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+/* Inputs */
+.internship-placement-modal-input,
+.internship-placement-modal-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.internship-placement-modal-textarea {
+  resize: vertical;
+}
+
+/* Buttons */
+.internship-placement-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.internship-placement-save-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.internship-placement-save-btn:hover {
+  background-color: #218838;
+}
+
+.internship-placement-cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.internship-placement-cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .internship-placement-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .internship-placement-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .internship-placement-add-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .internship-placement-table th,
+  .internship-placement-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .internship-placement-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .internship-placement-action-buttons button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .internship-placement-modal-content {
+    max-width: 95%;
+  }
+}

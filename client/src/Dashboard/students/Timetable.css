@@ -1,0 +1,243 @@
+.timetable-box {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Section */
+.timetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.timetable-title {
+  font-size: 32px;
+  color: #007bff;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.timetable-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.semester-select {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.timetable-add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.timetable-add-btn:hover {
+  background-color: #218838;
+}
+
+/* Table */
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  overflow-x: auto;
+}
+
+.timetable-table th,
+.timetable-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #111;
+}
+
+.timetable-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.button-action {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-edit {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  min-width: 70px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-edit:hover {
+  background-color: #218838;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  min-width: 70px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+/* Modal box */
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+/* Inputs */
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timetable-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .timetable-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .timetable-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .semester-select,
+  .timetable-add-btn {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .timetable-table th,
+  .timetable-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .button-action button {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .modal-box {
+    max-width: 95%;
+  }
+}
