@@ -12,12 +12,10 @@ import {
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  // Initialize state from localStorage or default to empty string
   const [openSection, setOpenSection] = useState(
     () => localStorage.getItem("openSection") || ""
   );
 
-  // Update localStorage when openSection changes
   useEffect(() => {
     localStorage.setItem("openSection", openSection);
   }, [openSection]);
@@ -26,7 +24,6 @@ function Sidebar() {
     setOpenSection(openSection === section ? "" : section);
   };
 
-  // Reusable function to render dropdown sections
   const renderDropdown = (section, icon, title, items) => (
     <>
       <li
@@ -44,8 +41,8 @@ function Sidebar() {
       </li>
       {openSection === section && (
         <ul className="submenu">
-          {items.map((item, index) => (
-            <li key={index}>
+          {items.map((item) => (
+            <li key={item.path}>
               <Link to={item.path} onClick={() => setOpenSection(section)}>
                 {item.label}
               </Link>
@@ -56,7 +53,6 @@ function Sidebar() {
     </>
   );
 
-  // Dropdown configurations
   const dropdowns = [
     {
       section: "courses",
@@ -129,14 +125,16 @@ function Sidebar() {
             Dashboard
           </Link>
         </li>
-        {dropdowns.map((dropdown) =>
-          renderDropdown(
-            dropdown.section,
-            dropdown.icon,
-            dropdown.title,
-            dropdown.items
-          )
-        )}
+        {dropdowns.map((dropdown) => (
+          <React.Fragment key={dropdown.section}>
+            {renderDropdown(
+              dropdown.section,
+              dropdown.icon,
+              dropdown.title,
+              dropdown.items
+            )}
+          </React.Fragment>
+        ))}
       </ul>
     </div>
   );
