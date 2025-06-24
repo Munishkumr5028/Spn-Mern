@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper */
+.auth-wrapper {
+  background-color: #fff;
+  padding: 2.5rem;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Headings */
+.auth-wrapper h2,
+.auth-wrapper h3 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.auth-wrapper input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.2s ease;
+}
+
+.auth-wrapper input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.auth-wrapper button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.auth-wrapper button:hover {
+  background: #0056b3;
+}
+
+/* Checkbox */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.checkbox-label span {
+  line-height: 16px;
+  padding-bottom: 17px;
+  vertical-align: middle;
+}
+
+/* Links */
+.link-text {
+  display: block;
+  text-align: center;
+  color: #007bff;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* Modal */
+.modal {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.modal h3 {
+  color: #34495e;
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-wrapper h2 {
+    font-size: 1.4rem;
+  }
+
+  .auth-wrapper button {
+    font-size: 15px;
+  }
+}
