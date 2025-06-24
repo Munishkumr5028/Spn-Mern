@@ -1,19 +1,10 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Wrapper */
+.box {
+    padding: 106px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .auth-wrapper {
   background-color: #fff;
   padding: 2.5rem;
@@ -86,8 +77,8 @@ body {
 
 .checkbox-label span {
   line-height: 16px;
-  padding-bottom: 17px;
   vertical-align: middle;
+  padding-bottom: 16px;
 }
 
 /* Links */
@@ -101,19 +92,43 @@ body {
   text-decoration: underline;
 }
 
+.link-text:hover {
+  color: #0056b3;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
 /* Modal */
 .modal {
-  background: #f9f9f9;
-  padding: 1.5rem;
-  margin-top: 2rem;
+  background: #fff;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-in-out;
+  position: relative;
 }
 
 .modal h3 {
-  color: #34495e;
-  margin-bottom: 1rem;
-  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* Animations */
@@ -125,6 +140,26 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -140,5 +175,9 @@ body {
 
   .auth-wrapper button {
     font-size: 15px;
+  }
+
+  .modal {
+    padding: 1.5rem;
   }
 }

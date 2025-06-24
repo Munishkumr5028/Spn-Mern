@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { FaCog, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   return (
@@ -41,24 +47,22 @@ function Navbar() {
       <div className="navbar-right">
         <div className="icon-wrapper">
           <FaSearch className="nav-icon" />
-          <span className="hover-line"></span>
         </div>
         <div className="icon-wrapper">
           <FaBell className="nav-icon" />
-          <span className="hover-line"></span>
         </div>
         <div className="icon-wrapper">
           <FaCog className="nav-icon" />
-          <span className="hover-line"></span>
         </div>
         <div className="user-dropdown" onClick={toggleDropdown}>
           <div className="icon-wrapper">
             <FaUserCircle className="nav-icon user-icon" />
-            <span className="hover-line"></span>
           </div>
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <p className="dropdown-item">Logout</p>
+              <p className="dropdown-item" onClick={handleLogout}>
+                Logout
+              </p>
             </div>
           )}
         </div>

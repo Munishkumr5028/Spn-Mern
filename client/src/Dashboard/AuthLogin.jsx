@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login, verifyOtp, forgotPassword, resetPassword } from "../../api/authApi";
+import {
+  login,
+  verifyOtp,
+  forgotPassword,
+  resetPassword,
+} from "../../api/authApi";
 import { toast } from "react-toastify";
 import "./authlogin.css";
 
@@ -24,7 +29,11 @@ const AuthLogin = () => {
     if (!email || !password) return toast.error("Please fill all fields");
 
     try {
-      const res = await login({ email, password, isTrustedDevice: trustedDevice });
+      const res = await login({
+        email,
+        password,
+        isTrustedDevice: trustedDevice,
+      });
       if (res.data.requireOtp) {
         setUserId(res.data.userId);
         setShowOtpModal(true);
@@ -42,7 +51,11 @@ const AuthLogin = () => {
   const handleVerifyOtp = async () => {
     if (!otp) return toast.error("Please enter OTP");
     try {
-      const res = await verifyOtp({ userId, otp, isTrustedDevice: trustedDevice });
+      const res = await verifyOtp({
+        userId,
+        otp,
+        isTrustedDevice: trustedDevice,
+      });
       localStorage.setItem("token", res.data.token);
       toast.success("OTP verified, login successful");
       setShowOtpModal(false);
@@ -79,94 +92,111 @@ const AuthLogin = () => {
   };
 
   return (
-    <div className="auth-wrapper">
-      <h2>Admin Login</h2>
+    <div className="box">
+      <div className="auth-wrapper">
+        <h2>Admin Login</h2>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <label className="checkbox-label">
         <input
-          type="checkbox"
-          checked={trustedDevice}
-          onChange={() => setTrustedDevice(!trustedDevice)}
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <span>Trusted Device</span>
-      </label>
 
-      <button onClick={handleLogin}>Login</button>
-      <p className="link-text" onClick={() => setShowForgotModal(true)}>
-        Forgot Password?
-      </p>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      {/* OTP Modal */}
-      {showOtpModal && (
-        <div className="modal">
-          <h3>Enter OTP</h3>
+        <label className="checkbox-label">
           <input
-            type="text"
-            placeholder="6-digit OTP"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-            maxLength={6}
+            type="checkbox"
+            checked={trustedDevice}
+            onChange={() => setTrustedDevice(!trustedDevice)}
           />
-          <button onClick={handleVerifyOtp}>Verify OTP</button>
-          <p className="link-text" onClick={() => setShowOtpModal(false)}>Close</p>
-        </div>
-      )}
+          <span>Trusted Device</span>
+        </label>
 
-      {/* Forgot Modal */}
-      {showForgotModal && (
-        <div className="modal">
-          <h3>Forgot Password</h3>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button onClick={handleForgot}>Send OTP</button>
-          <p className="link-text" onClick={() => setShowForgotModal(false)}>Close</p>
-        </div>
-      )}
+        <button onClick={handleLogin}>Login</button>
+        <p className="link-text" onClick={() => setShowForgotModal(true)}>
+          Forgot Password?
+        </p>
 
-      {/* Reset Password Modal */}
-      {showResetModal && (
-        <div className="modal">
-          <h3>Reset Password</h3>
-          <input
-            type="text"
-            placeholder="Enter OTP"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="New Password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <button onClick={handleReset}>Reset Password</button>
-          <p className="link-text" onClick={() => setShowResetModal(false)}>Close</p>
-        </div>
-      )}
+        {/* OTP Modal */}
+        {showOtpModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h3>Enter OTP</h3>
+              <input
+                type="text"
+                placeholder="6-digit OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                maxLength={6}
+              />
+              <button onClick={handleVerifyOtp}>Verify OTP</button>
+              <p className="link-text" onClick={() => setShowOtpModal(false)}>
+                Close
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Forgot Password Modal */}
+        {showForgotModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h3>Forgot Password</h3>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button onClick={handleForgot}>Send OTP</button>
+              <p
+                className="link-text"
+                onClick={() => setShowForgotModal(false)}
+              >
+                Close
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Reset Password Modal */}
+        {showResetModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h3>Reset Password</h3>
+              <input
+                type="text"
+                placeholder="Enter OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="New Password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button onClick={handleReset}>Reset Password</button>
+              <p className="link-text" onClick={() => setShowResetModal(false)}>
+                Close
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

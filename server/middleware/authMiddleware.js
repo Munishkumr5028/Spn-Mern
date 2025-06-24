@@ -17,3 +17,7 @@ exports.protect = (req, res, next) => {
     return res.status(403).json({ message: "Token expired or invalid" });
   }
 };
+// Protect admin routes
+app.get("/dashboard", verifyToken, (req, res) => {
+  res.json({ emails: 5, news: 2, events: 3, announcements: 1 });
+});
