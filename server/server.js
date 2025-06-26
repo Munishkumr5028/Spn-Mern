@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const collegeRoutes = require("./routes/authRoutes");
+const courseRoutes = require("./routes/course.routes");
 // const User = require("./models/authModel"); 
 
 dotenv.config();
@@ -22,6 +23,7 @@ mongoose
   .catch((err) => console.error(err));
   
 app.use("/api/college", collegeRoutes);
+app.use("/api/course", courseRoutes);
 
 // async function createAdminAccount() {
 //   try {

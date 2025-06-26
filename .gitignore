@@ -15,3 +15,5 @@ server/.env
 
 # Vite/Build Output
 client/dist/
+
+server/uploads
