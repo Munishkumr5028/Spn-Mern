@@ -105,7 +105,8 @@ function Contact() {
         </div>
 
         <div className="info-container">
-          <h3>Postal Address:</h3>
+          <div className="info-address">
+            <h3>Postal Address:</h3>
           <p>
             For Enquiry
             <br />
@@ -126,6 +127,7 @@ function Contact() {
           <p>
             <strong>Toll Free:</strong> 1800 3001 1600
           </p>
+          </div>
         </div>
       </div>
     </section>
