@@ -148,16 +148,8 @@ function PressRelease() {
                   <td>{item.category}</td>
                   <td>
                     <div className="button-action">
-                      <FaEdit
-                        className="icon-edit"
-                        onClick={() => handleEdit(item)}
-                        title="Edit Press Release"
-                      />
-                      <FaTrash
-                        className="icon-delete"
-                        onClick={() => handleDelete(item.id)}
-                        title="Delete Press Release"
-                      />
+                      <button  onClick={() => handleEdit(item)} className="btn-edit">Edit</button>
+                      <button className="btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
                     </div>
                   </td>
                 </tr>

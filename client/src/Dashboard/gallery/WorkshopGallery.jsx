@@ -157,16 +157,8 @@ function WorkshopGallery() {
                   <td>{item.category}</td>
                   <td>
                     <div className="button-action">
-                      <FaEdit
-                        className="icon-edit"
-                        onClick={() => handleEdit(item)}
-                        title="Edit Workshop"
-                      />
-                      <FaTrash
-                        className="icon-delete"
-                        onClick={() => handleDelete(item.id)}
-                        title="Delete Workshop"
-                      />
+                      <button  onClick={() => handleEdit(item)} className="btn-edit">Edit</button>
+                      <button className="btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
                     </div>
                   </td>
                 </tr>

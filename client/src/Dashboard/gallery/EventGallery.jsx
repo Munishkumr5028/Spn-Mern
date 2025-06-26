@@ -128,16 +128,8 @@ function EventGallery() {
                   <td>{item.category}</td>
                   <td>
                     <div className="button-action">
-                      <FaEdit
-                        className="icon-edit"
-                        onClick={() => handleEdit(item)}
-                        title="Edit Event"
-                      />
-                      <FaTrash
-                        className="icon-delete"
-                        onClick={() => handleDelete(item.id)}
-                        title="Delete Event"
-                      />
+                     <button  onClick={() => handleEdit(item)} className="btn-edit">Edit</button>
+                      <button className="btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
                     </div>
                   </td>
                 </tr>
