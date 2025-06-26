@@ -156,7 +156,7 @@ function ExamNotification() {
                   <td>{item.category}</td>
                   <td>
                     <div className="button-action">
-                      <button  onClick={() => handleEdit(item)} className="btn-edit">Edit</button>
+                  <button  onClick={() => handleEdit(item)} className="btn-edit">Edit</button>
                       <button className="btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
                     </div>
                   </td>
