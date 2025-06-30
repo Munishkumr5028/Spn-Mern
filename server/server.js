@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const collegeRoutes = require("./routes/authRoutes");
 const courseRoutes = require("./routes/course.routes");
-// const User = require("./models/authModel"); 
+const User = require("./models/authModel"); 
 
 dotenv.config();
 
@@ -18,33 +18,33 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(async () => {
     console.log("✅ MongoDB Connected");
-    // await createAdminAccount(); // auto setup admin
+    await createAdminAccount(); // auto setup admin
   })
   .catch((err) => console.error(err));
   
 app.use("/api/college", collegeRoutes);
 app.use("/api/course", courseRoutes);
 
-// async function createAdminAccount() {
-//   try {
-//     const existingAdmin = await User.findOne({
-//       email: process.env.ADMIN_EMAIL,
-//     });
-//     if (!existingAdmin) {
-//       const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
-//       await User.create({
-//         name: "Admin",
-//         email: process.env.ADMIN_EMAIL,
-//         password: hashedPassword,
-//       });
-//       console.log("✅ Admin account created");
-//     } else {
-//       console.log("✅ Admin account already exists");
-//     }
-//   } catch (error) {
-//     console.error("❌ Error creating admin user:", error);
-//   }
-// }
+async function createAdminAccount() {
+  try {
+    const existingAdmin = await User.findOne({
+      email: process.env.ADMIN_EMAIL,
+    });
+    if (!existingAdmin) {
+      const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
+      await User.create({
+        name: "Admin",
+        email: process.env.ADMIN_EMAIL,
+        password: hashedPassword,
+      });
+      console.log("✅ Admin account created");
+    } else {
+      console.log("✅ Admin account already exists");
+    }
+  } catch (error) {
+    console.error("❌ Error creating admin user:", error);
+  }
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
